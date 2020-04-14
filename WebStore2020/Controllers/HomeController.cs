@@ -17,5 +17,38 @@ namespace WebStore2020.Controllers
         {
             return View();
         }
+        public IActionResult BlogSingle()  //<controller>/BlogSingle
+        {
+            return View();
+        }
+        public IActionResult Cart()  //<controller>/Cart
+        {
+            return View();
+        }
+        public IActionResult Checkout()  //<controller>/Checkout
+        {
+            return View();
+        }
+        public IActionResult ContactUs()  //<controller>/ContactUs
+        {
+            return View();
+        }
+        public IActionResult Login()  //<controller>/Login
+        {
+            return View();
+        }
+        public IActionResult NotFound()  //<controller>/NotFound
+        {
+            return View();
+        }
+
+        public IActionResult ProductDetails()  //<controller>/ProductDetails
+        {
+            return View();
+        }
+        public IActionResult Shop()  //<controller>/Shop
+        {
+            return View();
+        }
     }
 }
