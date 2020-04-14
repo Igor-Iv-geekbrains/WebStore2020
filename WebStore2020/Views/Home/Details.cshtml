@@ -1,0 +1,45 @@
+﻿@model WebStore2020.Models.EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+@*@Html.DisplayForModel()*@
+@*@Html.EditorForModel()*@
+
+<table class="table table-border">
+
+    <tr>
+        <td>ID</td>
+        <td>@Model.ID </td>
+    </tr>
+    <tr>
+        <td>Surname</td>
+        <td>@Model.SurName </td>
+    </tr>
+
+    <tr>
+        <td>Firstname</td>
+        <td>@Model.FirstName </td>
+    </tr>
+
+    <tr>
+        <td>Patronymic</td>
+        <td>@Model.Patronymic </td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td>@Model.Age </td>
+    </tr>
+    <tr>
+        <td>Position</td>
+        <td>@Model.Position </td>
+    </tr>
+    <tr>
+        <<td>
+        @Html.ActionLink("<<Back", "Index")
+    </td>
+    </tr>
+    
+

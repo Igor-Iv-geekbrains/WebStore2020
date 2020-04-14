@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebStore2020.Models.CarViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <h1>Armen's Vehicle ShopOnline</h1>
+<table class=" table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID </td>
+            <td>@item.Model </td>
+            <td>@item.Price </td>
+            <td>
+                @Html.ActionLink("More details...", "Details", new { id = item.ID })
+            </td>
+        </tr>
+    }
