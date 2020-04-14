@@ -41,14 +41,14 @@ namespace WebStore2020
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+            app.UseStaticFiles(); //use folder wwwroot
             app.UseRouting();
             var helloMsg = _configuration["Logging:LogLevel:Default"];
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                    name: "default",
-                   pattern: "{controller=New}/{action=Index}/{id?}");  //path template
+                   pattern: "{controller=Cars}/{action=Index}/{id?}");  //path template
 
                 //endpoints.MapControllerRoute(
                 //    name: "default",

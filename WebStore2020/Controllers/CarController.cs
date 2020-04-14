@@ -11,11 +11,11 @@ namespace WebStore2020.Controllers
 {
     
     
-    public class NewController : Controller
+    public class CarController : Controller
     {
 
         List<CarViewModel> carViewModels = new List<CarViewModel>();
-    public NewController()
+    public CarController()
         {
             CarViewModel carView = new CarViewModel();
             carViewModels = carView.GetCar((Program.modelList));
