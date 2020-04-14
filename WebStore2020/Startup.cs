@@ -48,14 +48,14 @@ namespace WebStore2020
             {
                 endpoints.MapControllerRoute(
                    name: "default",
-                   pattern: "{controller=Car}/{action=Index}/{id?}");  //path template
+                   pattern: "{controller=Home}/{action=Index}/{id?}");  //path template
 
                 //endpoints.MapControllerRoute(
                 //    name: "default",
                 //    pattern: "{controller=Home}/{action=Index}/{id?}");  //path template
-                ////endpoints.MapGet("/", async context =>
+                //endpoints.MapGet("/", async context =>
                 //{
-                //    await context.Response.WriteAsync(helloMsg);
+                //    await context.Response.WriteAsync("Home");
                 //});
             });
         }
