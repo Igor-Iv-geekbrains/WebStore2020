@@ -48,7 +48,7 @@ namespace WebStore2020
             {
                 endpoints.MapControllerRoute(
                    name: "default",
-                   pattern: "{controller=Cars}/{action=Index}/{id?}");  //path template
+                   pattern: "{controller=Car}/{action=Index}/{id?}");  //path template
 
                 //endpoints.MapControllerRoute(
                 //    name: "default",
