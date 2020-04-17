@@ -3,45 +3,65 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebStore2020.Infrastructure.Interfaces;
 using WebStore2020.Models;
 
 namespace WebStore2020.Controllers
 {
+    
+    [Route("users")]
     public class EmloyeeController : Controller
     {
-        List<EmployeeViewModel> _employees = new List<EmployeeViewModel>
+        private readonly IEmployeeService _employeeService;// _employees;
+        public EmloyeeController(IEmployeeService employeeService)
         {
-            new EmployeeViewModel
-            {
-                ID =1,
-                FirstName = "Ivan",
-                SurName = "Ivanov",
-                Patronymic = "Ivanovich",
-                Age = 22,
-                Position="Master"
-            },
-            new EmployeeViewModel
-            {
-                ID =2,
-                FirstName = "Igor",
-                SurName = "Petrov",
-                Patronymic = "Petrovich",
-                Age = 44,
-                Position="Slave"
-            }
-        };
-        //GET: /controller
+            _employeeService = employeeService;
+        }
+        
+        //GET: /users/all
+        [Route("all")]
         public IActionResult Index()
         {
             //return Content("Hello from home controller");
-            return View(_employees);
+            return View(_employeeService.GetAll());
         }
 
-        //GET: /controller/details/id
+        //GET: /users/{id}
+        [Route("{id}")]
         public IActionResult Details(int id)
         {
             //return Content("Hello from home controller");
-            return View(_employees.FirstOrDefault(x => x.ID == id));
+            return View(_employeeService.GetById(id));
+        }
+        [Route("edit/{id?}")]
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            //return Content("Hello from home controller");
+            if(!id.HasValue)return View(new EmployeeViewModel());
+
+            var model = _employeeService.GetById(id.Value);
+            if (model == null) return NotFound();
+            return View(model);
+        }
+        [Route("edit/{id?}")]
+        [HttpPost]
+        public IActionResult Edit(EmployeeViewModel model)
+        {
+            if (model.ID > 0)
+            {
+                var dbItem = _employeeService.GetById(model.ID);
+                if (ReferenceEquals(dbItem, null)) return NotFound();
+                dbItem.FirstName = model.FirstName;
+                dbItem.SurName = model.SurName;
+                dbItem.Patronymic = model.Patronymic;
+                dbItem.Age = model.Age;
+                dbItem.Position = model.Position;
+            }
+            else _employeeService.AddNew(model);
+            _employeeService.Commit();
+            return RedirectToAction(nameof(Index));
+           
         }
     }
 }

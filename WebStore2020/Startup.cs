@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
-
+using WebStore2020.Infrastructure;
+using WebStore2020.Infrastructure.Interfaces;
+using WebStore2020.Infrastructure.Services;
 
 namespace WebStore2020
 {
@@ -29,9 +31,16 @@ namespace WebStore2020
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(SimpleActionFilter));
+            });
+            services.AddSingleton<IEmployeeService, InMemoryEmployeeService>();   //services lives all time
+            services.AddScoped<IEmployeeService, InMemoryEmployeeService>();        //services lives http request time
+            //services.AddTransient<IEmployeeService, InMemoryEmployeeService>();   //rervic=es lives ***
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -42,6 +51,13 @@ namespace WebStore2020
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles(); //use folder wwwroot
+
+            app.Map("/index", CustomIndexHandler);
+           // app.UseMiddleware<TokenMiddleware>();
+
+            //UseSample(app);
+            
+
             app.UseRouting();
             var helloMsg = _configuration["Logging:LogLevel:Default"];
             app.UseEndpoints(endpoints =>
@@ -58,6 +74,38 @@ namespace WebStore2020
                 //    await context.Response.WriteAsync("Home");
                 //});
             });
+            //app.UseMvcWithDefaultRoute();
+            RunSample(app);
         }
+
+        private void UseSample(IApplicationBuilder app)
+        {
+            app.Use(async (context, next) =>
+           {
+               bool isError = false;
+               //....
+               if (isError)
+               {
+                   await context.Response.WriteAsync("Hi from use ");
+               }
+               else { await next.Invoke(); }
+           });
+        }
+
+        private void CustomIndexHandler(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Index");
+            });
+        }
+        private void RunSample(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Hi from app.Run");
+            });
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebStore2020.Infrastructure;
 
 namespace WebStore2020.Controllers
 {
@@ -12,7 +13,7 @@ namespace WebStore2020.Controllers
         {
             return View();
         }
-
+        [SimpleActionFilter]
         public IActionResult Blog()  //<controller>/Blog
         {
             return View();

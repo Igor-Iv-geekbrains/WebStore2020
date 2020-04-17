@@ -8,6 +8,7 @@
     @foreach (var item in Model)
     {
     <tr>
+        <td> <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a></td>
         <td>@item.ID </td>
         <td>@item.SurName </td>
         <td>@item.FirstName </td>
@@ -19,5 +20,6 @@
         </td>
     </tr>
     }
+    </table>
 
 

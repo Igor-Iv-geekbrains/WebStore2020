@@ -9,8 +9,8 @@ using WebStore2020;
 
 namespace WebStore2020.Controllers
 {
-    
-    
+
+    [Route("vehicle")]
     public class CarController : Controller
     {
 
@@ -21,10 +21,12 @@ namespace WebStore2020.Controllers
             carViewModels = carView.GetCar((Program.modelList));
         }
 
+        [Route("all")]
         public IActionResult Index()
         {
             return View(carViewModels);
         }
+        [Route("{id}")]
         public IActionResult Details(int id)
         {
             //return Content("Hello from home controller");
