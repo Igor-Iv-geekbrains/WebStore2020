@@ -4,22 +4,24 @@
 }
 
 <h1>Hello from my first view</h1>
+
+<a asp-action="Edit" class="btn btn-success">Add</a>
 <table class=" table">
     @foreach (var item in Model)
     {
-    <tr>
-        <td> <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a></td>
-        <td>@item.ID </td>
-        <td>@item.SurName </td>
-        <td>@item.FirstName </td>
-        <td>@item.Patronymic </td>
-        @*<td>@item.Position </td>
-        <td>@item.Age </td>*@
-        <td>
-            @Html.ActionLink("Details", "Details", new { id = item.ID })
-        </td>
-    </tr>
+        <tr>
+            <td> <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a></td>
+            <td>@item.ID </td>
+            <td>@item.SurName </td>
+            <td>@item.FirstName </td>
+            <td>@item.Patronymic </td>
+            @*<td>@item.Position </td>
+                <td>@item.Age </td>*@
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+            </td>
+        </tr>
     }
-    </table>
+</table>
 
 

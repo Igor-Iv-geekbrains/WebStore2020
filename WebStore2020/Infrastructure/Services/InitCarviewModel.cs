@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebStore2020.Infrastructure.Interfaces;
 
 namespace WebStore2020.Models
 {
-    public class InitCarViewModel
+    public class InitCarViewModel : ICarService
     {
+        List<CarViewModel> _cars;
 
         public List<InitCarViewModel> carList = new List<InitCarViewModel>();
         public string[] model = { "BMW", "Toyota", "Audi", "Nissan", "Lexus", "Opel", "Mazda", "Seat", "Volvo", "Saab", "Alfa Romeo" };
@@ -46,6 +48,50 @@ namespace WebStore2020.Models
         public string InteriorColour { get; set; }
         public string Condition { get; set; }
         public string Price { get; set; }
+
+
+        public void AddNew(InitCarViewModel dbItem, CarViewModel carModel)
+        {
+
+            dbItem.ID = Program.modelList.Max(e => e.ID) + 1;  //Autogenerate ID for DB/Table
+            dbItem.Colour = carModel.Colour;
+            dbItem.Condition = carModel.Condition;
+            dbItem.Engine = carModel.Engine;
+            dbItem.Model = carModel.Model;
+            dbItem.Transmission = carModel.Transmission;
+            dbItem.InteriorColour = carModel.InteriorColour;
+            dbItem.Price = carModel.Price;
+            Program.modelList.Add(dbItem);
+        }
+
+        public void Commit()
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            var cars = Program.modelList.FirstOrDefault(x => x.ID == id);
+            if (cars is null) return;
+            else Program.modelList.Remove(cars);
+        }
+
+        public IEnumerable<CarViewModel> GetAll()
+        {
+            CarViewModel carView = new CarViewModel();
+            _cars = carView.GetCar((Program.modelList));
+            return _cars;
+        }
+
+        public CarViewModel GetById(int id)
+        {
+            return _cars.FirstOrDefault(x => x.ID == id);
+        }
+
+        public InitCarViewModel GetByIdInitList(int id)
+        {
+            return carList.FirstOrDefault(x => x.ID == id);
+        }
 
 
     }

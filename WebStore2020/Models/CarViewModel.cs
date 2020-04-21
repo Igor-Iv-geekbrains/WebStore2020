@@ -38,5 +38,7 @@ namespace WebStore2020.Models
         public string Price { get; set; }
 
 
+       
+
     }
 }

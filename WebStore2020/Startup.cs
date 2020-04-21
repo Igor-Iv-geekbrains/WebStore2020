@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using WebStore2020.Infrastructure;
 using WebStore2020.Infrastructure.Interfaces;
 using WebStore2020.Infrastructure.Services;
+using WebStore2020.Models;
 
 namespace WebStore2020
 {
@@ -36,7 +37,8 @@ namespace WebStore2020
                 options.Filters.Add(typeof(SimpleActionFilter));
             });
             services.AddSingleton<IEmployeeService, InMemoryEmployeeService>();   //services lives all time
-            services.AddScoped<IEmployeeService, InMemoryEmployeeService>();        //services lives http request time
+            services.AddSingleton<ICarService,  InitCarViewModel>();
+            //services.AddScoped<IEmployeeService, InMemoryEmployeeService>();        //services lives http request time
             //services.AddTransient<IEmployeeService, InMemoryEmployeeService>();   //rervic=es lives ***
         }
 
@@ -52,7 +54,7 @@ namespace WebStore2020
             }
             app.UseStaticFiles(); //use folder wwwroot
 
-            app.Map("/index", CustomIndexHandler);
+           // app.Map("/index", CustomIndexHandler);
            // app.UseMiddleware<TokenMiddleware>();
 
             //UseSample(app);
