@@ -10,10 +10,10 @@ namespace WebStore2020.Controllers
 {
     
     [Route("users")]
-    public class EmloyeeController : Controller
+    public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;// _employees;
-        public EmloyeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
         }
@@ -48,6 +48,14 @@ namespace WebStore2020.Controllers
         [HttpPost]
         public IActionResult Edit(EmployeeViewModel model)
         {
+            if (model.Age <18 || model.Age > 100)
+            {
+                ModelState.AddModelError("Age", "Age ERROR");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
             if (model.ID > 0)
             {
                 var dbItem = _employeeService.GetById(model.ID);
@@ -63,5 +71,13 @@ namespace WebStore2020.Controllers
             return RedirectToAction(nameof(Index));
            
         }
+        [Route("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            _employeeService.Delete(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
+
+
