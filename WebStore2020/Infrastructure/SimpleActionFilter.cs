@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebStore2020.Infrastructure
+namespace Webstore.Infrastructure
 {
     public class SimpleActionFilter : Attribute, IActionFilter
     {

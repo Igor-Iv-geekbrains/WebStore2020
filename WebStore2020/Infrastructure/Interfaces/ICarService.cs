@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebStore2020.Models;
+using Webstore.Models;
 
-namespace WebStore2020.Infrastructure.Interfaces
+namespace Webstore.Infrastructure.Interfaces
 {
     public interface ICarService
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebStore2020.Infrastructure.Interfaces;
-using WebStore2020.Models;
+using Webstore.Infrastructure.Interfaces;
+using Webstore.Models;
 
-namespace WebStore2020.Controllers
+namespace Webstore.Controllers
 {
     
     [Route("users")]

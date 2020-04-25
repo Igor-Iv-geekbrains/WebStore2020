@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebStore2020.Models
+namespace Webstore.Models
 {
     public class CarViewModel
     {

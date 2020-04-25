@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebStore2020.Infrastructure.Interfaces;
-using WebStore2020.Models;
+using Webstore.Infrastructure.Interfaces;
+using Webstore.Models;
 
-namespace WebStore2020.Infrastructure.Services
+namespace Webstore.Infrastructure.Services
 {
     public class InMemoryEmployeeService : IEmployeeService
     {

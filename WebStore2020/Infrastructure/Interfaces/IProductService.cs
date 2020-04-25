@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Threading.Tasks;
+using WebStore.Domain.Entities;
+using WebStore.Domain.Entities.Base;
+
+namespace Webstore.Infrastructure.Interfaces
+{
+    public interface IProductService
+    {
+        IEnumerable<Category> GetCategories();
+        IEnumerable<Brand> GetBrands();
+        IEnumerable<Product> GetProducts(ProductFilter filter);
+    }
+}

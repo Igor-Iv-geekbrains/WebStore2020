@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebStore2020.Infrastructure;
+using Webstore.Infrastructure;
 
-namespace WebStore2020.Controllers
+namespace Webstore.Controllers
 {
     public class HomeController : Controller
     {
@@ -43,13 +43,6 @@ namespace WebStore2020.Controllers
             return View();
         }
 
-        public IActionResult ProductDetails()  //<controller>/ProductDetails
-        {
-            return View();
-        }
-        public IActionResult Shop()  //<controller>/Shop
-        {
-            return View();
-        }
+
     }
 }

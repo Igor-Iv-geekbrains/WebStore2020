@@ -8,12 +8,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
-using WebStore2020.Infrastructure;
-using WebStore2020.Infrastructure.Interfaces;
-using WebStore2020.Infrastructure.Services;
-using WebStore2020.Models;
+using Webstore.Infrastructure;
+using Webstore.Infrastructure.Interfaces;
+using Webstore.Infrastructure.Services;
+using Webstore.Models;
 
-namespace WebStore2020
+namespace Webstore
 {
 
     public class Startup
@@ -38,6 +38,7 @@ namespace WebStore2020
             });
             services.AddSingleton<IEmployeeService, InMemoryEmployeeService>();   //services lives all time
             services.AddSingleton<ICarService,  InitCarViewModel>();
+            services.AddSingleton<IProductService, InMemoryProductService>();
             //services.AddScoped<IEmployeeService, InMemoryEmployeeService>();        //services lives http request time
             //services.AddTransient<IEmployeeService, InMemoryEmployeeService>();   //rervic=es lives ***
         }
