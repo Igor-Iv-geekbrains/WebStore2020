@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using WebStore.Domain;
 using WebStore.Domain.Entities;
 using WebStore.Domain.Entities.Base;
 
-namespace Webstore.Infrastructure.Interfaces
+namespace WebStore.Infrastructure.Interfaces
 {
     public interface IProductService
     {

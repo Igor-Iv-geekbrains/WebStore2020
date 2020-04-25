@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebStore.Domain.Entities.Base.Interfaces;
 
-namespace Webstore.Models
+namespace WebStore.Models
 {
-    public class ProductViewModel : INamedEntity, IOrderEntity
+    public class ProductViewModel : INamedEntity, IOrderedEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

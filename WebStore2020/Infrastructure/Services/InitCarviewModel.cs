@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Webstore.Infrastructure.Interfaces;
+using WebStore.Infrastructure.Interfaces;
 
-namespace Webstore.Models
+namespace WebStore.Models
 {
     public class InitCarViewModel : ICarService
     {

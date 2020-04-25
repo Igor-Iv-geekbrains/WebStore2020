@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Webstore.Models;
-using Webstore.Infrastructure.Interfaces;
+using WebStore.Models;
+using WebStore.Infrastructure.Interfaces;
 
-namespace Webstore.ViewComponents
+namespace WebStore.ViewComponents
 {
     //[ViewComponent(Name = "Categories")]
     public class CategoriesViewComponent : ViewComponent

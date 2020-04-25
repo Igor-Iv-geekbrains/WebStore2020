@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Webstore.Controllers;
-using Webstore.Models;
+using WebStore.Controllers;
+using WebStore.Models;
 
 
-namespace Webstore
+namespace WebStore
 {
     public class Program
     {

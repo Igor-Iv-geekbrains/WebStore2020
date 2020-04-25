@@ -1,48 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Webstore.Infrastructure;
+﻿using Microsoft.AspNetCore.Mvc;
+using WebStore.Infrastructure;
 
-namespace Webstore.Controllers
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace WebStore.Controllers
 {
+    [SimpleActionFilter]
     public class HomeController : Controller
     {
+        // GET: /<controller>/
         public IActionResult Index()
         {
+            //throw new ApplicationException("Ошибочка вышла...");
             return View();
         }
+
+        // GET: /<controller>/blog
         [SimpleActionFilter]
-        public IActionResult Blog()  //<controller>/Blog
-        {
-            return View();
-        }
-        public IActionResult BlogSingle()  //<controller>/BlogSingle
-        {
-            return View();
-        }
-        public IActionResult Cart()  //<controller>/Cart
-        {
-            return View();
-        }
-        public IActionResult Checkout()  //<controller>/Checkout
-        {
-            return View();
-        }
-        public IActionResult ContactUs()  //<controller>/ContactUs
-        {
-            return View();
-        }
-        public IActionResult Login()  //<controller>/Login
-        {
-            return View();
-        }
-        public IActionResult NotFound()  //<controller>/NotFound
+        public IActionResult Blog()
         {
             return View();
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
 
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+
+        public IActionResult Checkout()
+        {
+            return View();
+        }
+
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
+        public IActionResult BlogSingle()
+        {
+            return View();
+        }
+
+        public IActionResult NotFound()
+        {
+            return View();
+        }
     }
 }

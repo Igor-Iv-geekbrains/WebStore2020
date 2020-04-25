@@ -8,12 +8,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
-using Webstore.Infrastructure;
-using Webstore.Infrastructure.Interfaces;
-using Webstore.Infrastructure.Services;
-using Webstore.Models;
+using WebStore.Infrastructure;
+using WebStore.Infrastructure.Interfaces;
+using WebStore.Infrastructure.Services;
+using WebStore.Models;
 
-namespace Webstore
+namespace WebStore
 {
 
     public class Startup

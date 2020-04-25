@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a asp-controller="Home" asp-action="Index"><img src="images/home/logo.png" alt="" /></a>
+                        <a asp-controller="Home" asp-action="Index"><img src="~/images/home/logo.png" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -91,7 +91,7 @@
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
                             <li class="dropdown">
-                                <a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                <a asp-controller="Catalog" asp-action="Shop">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a asp-controller="Catalog" asp-action="Shop">Products</a></li>
                                     <li><a asp-controller="Catalog" asp-action="ProductDetails">Product Details</a></li>
@@ -101,7 +101,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                <a asp-controller="Home" asp-action="Blog">Blog<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a asp-controller="Home" asp-action="Blog">Blog List</a></li>
                                     <li><a asp-controller="Home" asp-action="BlogSingle">Blog Single</a></li>
@@ -109,6 +109,7 @@
                             </li>
                             <li><a asp-controller="Home" asp-action="NotFound">404</a></li>
                             <li><a asp-controller="Home" asp-action="ContactUs">Contact</a></li>
+                            <li><a asp-controller="Employee" asp-action="Index">Employees</a></li>
                         </ul>
                     </div>
                 </div>

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Webstore.Models;
+using WebStore.Models;
 
-namespace Webstore.Infrastructure.Interfaces
+namespace WebStore.Infrastructure.Interfaces
 {
     public interface ICarService
     {

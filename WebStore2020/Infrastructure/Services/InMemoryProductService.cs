@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using WebStore.Domain;
 using WebStore.Domain.Entities;
 using WebStore.Domain.Entities.Base;
-using Webstore.Infrastructure.Interfaces;
+using WebStore.Infrastructure.Interfaces;
 
-namespace Webstore.Infrastructure.Services
-{  
+namespace WebStore.Infrastructure.Services
+{
     public class InMemoryProductService : IProductService
     {
         List<Category> _categories;

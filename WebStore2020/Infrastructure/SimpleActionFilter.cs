@@ -1,23 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
+using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Webstore.Infrastructure
+namespace WebStore.Infrastructure
 {
     public class SimpleActionFilter : Attribute, IActionFilter
     {
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            // postobrabotka
+            //постобработка 
             //throw new NotImplementedException();
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            //predobrabotka
-           // throw new NotImplementedException();
+            //предобработка 
+            //throw new NotImplementedException();
         }
     }
 }

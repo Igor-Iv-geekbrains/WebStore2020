@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Webstore.Models;
-using Webstore;
-using Webstore.Infrastructure.Interfaces;
+using WebStore.Models;
+using WebStore;
+using WebStore.Infrastructure.Interfaces;
 
-namespace Webstore.Controllers
+namespace WebStore.Controllers
 {
 
     [Route("vehicle")]

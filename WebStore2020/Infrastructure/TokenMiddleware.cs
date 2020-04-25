@@ -1,23 +1,25 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
-namespace Webstore.Infrastructure
+namespace WebStore.Infrastructure
 {
     public class TokenMiddleware
     {
-        private const string correctToken = "1235";
+        private const string correctToken = "qwerty123";
+
         public RequestDelegate Next { get; }
 
+        //ctor
         public TokenMiddleware(RequestDelegate next)
         {
             Next = next;
         }
-        public async Task IncokeAsync(HttpContext context)
+
+        public async Task InvokeAsync(HttpContext context)
         {
             var token = context.Request.Query["referenceToken"];
+
+            // если нет токена, то ничего не делаем, передаем запрос дальше по конвейеру
             if (string.IsNullOrEmpty(token))
             {
                 await Next.Invoke(context);
@@ -25,7 +27,7 @@ namespace Webstore.Infrastructure
             }
             if (token == correctToken)
             {
-                //work with token
+                // обрабатываем токен...
                 await Next.Invoke(context);
             }
             else
@@ -33,7 +35,6 @@ namespace Webstore.Infrastructure
                 await context.Response.WriteAsync("Token is incorrect");
             }
         }
-
 
     }
 }

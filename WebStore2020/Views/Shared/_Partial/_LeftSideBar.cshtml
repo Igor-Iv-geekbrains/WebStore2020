@@ -1,6 +1,7 @@
 ﻿<div class="left-sidebar">
-    @await Component.InvokeAsync("Categories") 
-   
+    @*@await Component.InvokeAsync("Categories")*@
+    <vc:categories></vc:categories>
+
     <div class="brands_products">
         <!--brands_products-->
         <h2>Brands</h2>
@@ -28,7 +29,7 @@
 
     <div class="shipping text-center">
         <!--shipping-->
-        <img src="images/home/shipping.jpg" alt="" />
+        <img src="~/images/home/shipping.jpg" alt="" />
     </div><!--/shipping-->
 
 </div>

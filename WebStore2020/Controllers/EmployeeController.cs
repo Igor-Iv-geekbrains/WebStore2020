@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Webstore.Infrastructure.Interfaces;
-using Webstore.Models;
+using WebStore.Infrastructure.Interfaces;
+using WebStore.Models;
 
-namespace Webstore.Controllers
+namespace WebStore.Controllers
 {
     
     [Route("users")]

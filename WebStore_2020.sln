@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore", "WebStore2020\WebStore.csproj", "{A101F6AA-31BD-468E-8BFA-ADD8D1CEC1AF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.Domain", "WebStore.Domain\WebStore.Domain.csproj", "{C86979A8-B611-41D3-B63D-35036663BF48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore", "WebStore2020\WebStore.csproj", "{60E6CF1B-2181-43F7-A7F8-72EB6DA0B583}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A101F6AA-31BD-468E-8BFA-ADD8D1CEC1AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A101F6AA-31BD-468E-8BFA-ADD8D1CEC1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A101F6AA-31BD-468E-8BFA-ADD8D1CEC1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A101F6AA-31BD-468E-8BFA-ADD8D1CEC1AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C86979A8-B611-41D3-B63D-35036663BF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C86979A8-B611-41D3-B63D-35036663BF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C86979A8-B611-41D3-B63D-35036663BF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C86979A8-B611-41D3-B63D-35036663BF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E6CF1B-2181-43F7-A7F8-72EB6DA0B583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E6CF1B-2181-43F7-A7F8-72EB6DA0B583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E6CF1B-2181-43F7-A7F8-72EB6DA0B583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E6CF1B-2181-43F7-A7F8-72EB6DA0B583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

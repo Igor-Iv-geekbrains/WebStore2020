@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "WebStore.Domain": {
+      "commandName": "Project"
+    }
+  }
+}
