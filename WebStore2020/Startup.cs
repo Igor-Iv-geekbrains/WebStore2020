@@ -12,6 +12,8 @@ using WebStore.Infrastructure;
 using WebStore.Infrastructure.Interfaces;
 using WebStore.Infrastructure.Services;
 using WebStore.Models;
+using WebStore.DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebStore
 {
@@ -36,9 +38,10 @@ namespace WebStore
             {
                 options.Filters.Add(typeof(SimpleActionFilter));
             });
+            services.AddDbContext<WebStoreContext>(options => options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<IEmployeeService, InMemoryEmployeeService>();   //services lives all time
             services.AddSingleton<ICarService,  InitCarViewModel>();
-            services.AddSingleton<IProductService, InMemoryProductService>();
+            services.AddScoped<IProductService, SqlProductService>();
             //services.AddScoped<IEmployeeService, InMemoryEmployeeService>();        //services lives http request time
             //services.AddTransient<IEmployeeService, InMemoryEmployeeService>();   //rervic=es lives ***
         }
